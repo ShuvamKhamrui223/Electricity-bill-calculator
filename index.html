@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Electricity bill calculator</title>
+
+  <!-- HTML -->
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Electricity consumption calculator</h1>
+
+  <form id="bill_calculation_form">
+    <h4 id="grandTotalBill"></h4>
+    <!-- text input field for location -->
+    <!-- TODO: change text field to drop down menu -->
+    <div class="input__box">
+      <label for="">Where is the customer Located?
+      </label>
+      <select name="" id="country_menu" required>
+        <option hidden>Choose your country</option>
+      </select>
+      <select name="" id="state_menu" required>
+        <option hidden>Choose your state</option>
+      </select>
+    </div>
+
+    <!-- contracted power drop down menu -->
+    <div class="input__box">
+      <label for=""> Contracted Power
+      </label>
+      <select name="contracted_power" id="contracted__power_menu" required>
+        <option value="" hidden>Select contracted power</option>
+      </select>
+    </div>
+
+    <!-- drop down menu and custom input field for tariff -->
+    <div class="input__box custom__datafield__box">
+      <label for=""> Contracted Tariff Type
+      </label>
+      <select name="" id="tariff_menu">
+        <option value="" hidden>Choose tariff</option>
+      </select>
+      <strong>Or</strong>
+
+      <label for="">custom tariff</label>
+      <input type="number" name="custom_tariff" id="custom_tariff" placeholder="Choose custom tariff (number of months)">
+    </div>
+
+    <!-- input fields for total consumption along with peak, half and off-hour consumption -->
+    <div class="input__box custom__datafield__box">
+      <label for="">total Comsumption data
+      </label>
+      <input type="number" name="" id="total__consumption_per_month" step="0.1" laceholder="Total consumption in a month (in kW/h)">
+      <strong>Or</strong>
+      <label for="">
+        kW/h peak hours
+      </label>
+      <input type="number" name="" id="peak_hour_consumption"
+step="0.1" placeholder="Consumption of peak hours (in kW/h)">
+
+
+      <label for="">
+        kW/h half-peak hours
+      </label>
+      <input type="number" name="" id="half_peak_hour_consumption"
+      step="0.1"
+      placeholder="Consumption of half-peak hours (in kW/h)">
+
+
+      <label for="">
+        kW/h off peak hours
+      </label>
+      <input type="number" name="" id="off_peak_hour_consumption" placeholder="Consumption of off-peak hours (in kW/h)" step="0.1">
+    </div>
+
+    <!-- input field for price per kWh -->
+    <div class="input__box">
+      <label for=""> Price per kWh
+      </label>
+      <input type="number" name="" id="price_per_kwh" step="0.1" placeholder="Price per kW/h">
+    </div>
+
+    <!-- input field for price of contracted power per day -->
+    <div class="input__box">
+      <label for=""> Price per contracted Power
+      </label> <input type="number" name="" id="price_per_contracted_power" step="0.1" placeholder="Price of contracted power / day (in kV/A)">
+    </div>
+    <button id="billFormButton">see results</button>
+  </form>
+
+  <div id="result"></div>
+  
+  <!-- Project -->
+  <script src="main.js"></script>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</body>
+
+</html>
